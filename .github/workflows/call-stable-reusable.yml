@@ -1,15 +1,12 @@
-# Repository B - Dynamic Workflow Calling the Reusable Workflow (.github/workflows/call-stable-reusable.yml)
+---
 name: Call Stable Reusable Workflow
-
 on:
-  workflow_dispatch:
-
+  workflow_dispatch:  # This allows manual trigger
 jobs:
   invoke_reusable_workflow:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Call the reusable workflow from Repository A
-        uses: venkatkumarp/repo-reusable/.github/workflows/stable.yml@main
+      - name: Call the reusable workflow from repository-stable
+        uses: venkatkumarp/repository-stable/.github/workflows/stable.yml@main  # Reference the reusable workflow from repository-stable
         with:
-          message: "Hello from Repository B!"
+          message: "Hello from Repository B!"  # Pass the message to the reusable workflow
