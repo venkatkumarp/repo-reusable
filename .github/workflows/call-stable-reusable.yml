@@ -1,12 +1,13 @@
----
 name: Call Stable Reusable Workflow
+
 on:
-  workflow_dispatch:  # This allows manual trigger
+  workflow_dispatch:
+
 jobs:
   invoke_reusable_workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Call the reusable workflow from repository-stable
-        uses: venkatkumarp/repository-stable/blob/main/.github/workflows/stable.yml@main  # Reference the reusable workflow from repository-stable
+        uses: venkatkumarp/repository-stable/.github/workflows/stable.yml@main  # This points to the reusable workflow in repository-stable
         with:
-          message: "Hello from Repository B!"  # Pass the message to the reusable workflow
+          message: "Hello from repo-reusable!"
