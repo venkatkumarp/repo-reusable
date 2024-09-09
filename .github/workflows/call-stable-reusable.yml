@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - name: Call the reusable workflow from Repository A
-        uses: ./.github/workflows/stable.yml@main
+        uses: venkatkumarp/repo-reusable/.github/workflows/stable.yml@main
         with:
           message: "Hello from Repository B!"
