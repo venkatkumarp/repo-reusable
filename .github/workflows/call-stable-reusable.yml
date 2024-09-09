@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  invoke_reusable_workflow:
+  my-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Call the reusable workflow from repository-stable
-        uses: venkatkumarp/repository-stable/.github/workflows/stable.yml@main  # This points to the reusable workflow in repository-stable
+        uses: https://github.com/venkatkumarp/repository-stable/blob/main/.github/workflows/stable.yml@main  # This points to the reusable workflow in repository-stable
         with:
           message: "Hello from repo-reusable!"
