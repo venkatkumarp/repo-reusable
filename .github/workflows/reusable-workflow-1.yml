@@ -1,6 +1,11 @@
 name: reusable workflow-1
 on:
   workflow_call:
+    inputs:
+      message:
+        description: 'The message to log'
+        required: true
+        default: 'my first reusable workflow'
 jobs:
   run-job1:
     runs-on: ubuntu-latest
@@ -8,4 +13,4 @@ jobs:
       - uses: actions/checkout@v3
       - name: write something to log
         run: |
-          echo "my first reusable workflow"
+          echo "${{ inputs.message }}"
