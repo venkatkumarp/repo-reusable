@@ -1,0 +1,11 @@
+name: reusable workflow-1
+on:
+  workflow_call:
+jobs:
+  run-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: write something to log
+        run: |
+          echo "my first reusable workflow"
