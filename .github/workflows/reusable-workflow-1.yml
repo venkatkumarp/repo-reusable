@@ -5,7 +5,8 @@ on:
       message:
         description: 'The message to log'
         required: true
-        default: 'my first reusable workflow'
+        type: string
+
 jobs:
   run-job1:
     runs-on: ubuntu-latest
